@@ -10,7 +10,7 @@ const date = require('date-and-time');
 router.post("/", authenticate, async function (req, res) {
   let obj = req.body;
   obj.userID = req.userID;
-  console.log(obj);
+ 
   await Product.create(obj);
   res.send("Successfully added details")
 })
@@ -84,7 +84,7 @@ if (req.query.priceRange && Array.isArray(req.query.priceRange)) {
   const totalItems = await Product.countDocuments(query);
 
   let obj = await query.skip(startIndex).limit(6);
-  console.log(obj.length);
+ 
   res.send({ data: obj, totalItems });
 });
 
