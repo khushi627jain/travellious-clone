@@ -30,7 +30,7 @@ router.patch("/:id",authenticate,async function(req,res,next){
   res.send("done")
 })
 
-router.get("/:id", authenticate, async function (req, res, next)
+router.get("/:id", async function (req, res, next)
  {
   const pageNumber = parseInt(req.params.id);
   const startIndex = (pageNumber - 1) * 6;
