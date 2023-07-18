@@ -88,7 +88,7 @@ if (req.query.priceRange && Array.isArray(req.query.priceRange)) {
   res.send({ data: obj, totalItems });
 });
 
-router.get("/single/:id",authenticate,async function(req,res,next){
+router.get("/single/:id",async function(req,res,next){
   let id=req.params.id
   let obj=await Product.findById({_id:id});
   res.send(obj)
