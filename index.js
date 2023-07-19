@@ -51,7 +51,7 @@ app.post("/login",async function(req,res){
         }
         else{
             var token = jwt.sign({ userId:obj._id},process.env.SECRET_KEY);
-             res.send({"msg":"Successfully login",token})
+             res.send({"msg":"Successfully login",token,obj})
         }
     }
   
