@@ -5,7 +5,7 @@ let express = require("express");
 const { authenticate } = require("./middleware");
 const { Product } = require("./EmployeeSchema");
 let router = express.Router();
-const date = require('date-and-time');
+
 
 router.post("/", authenticate, async function (req, res) {
   let obj = req.body;
@@ -93,15 +93,6 @@ router.get("/single/:id",async function(req,res,next){
   let obj=await Product.findById({_id:id});
   res.send(obj)
 })
-// router.patch("/edit/:id", authenticate, async function (req, res, next) {
-//   let obj = req.body
-//   await Employee.findByIdAndUpdate(req.params.id, obj)
-//   res.send("done")
-// })
 
-// router.delete("/delete/:id", authenticate, async function (req, res, next) {
-//   await Employee.findByIdAndDelete(req.params.id)
-//   res.send("done")
-// })
 
 module.exports = { router }
