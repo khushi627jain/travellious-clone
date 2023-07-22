@@ -62,7 +62,8 @@ else{
 })
 
 app.get("/user",authenticate,async function(req,res){
-    const obj=  await Users.findById(req.userId)
+   
+    const obj=  await Users.findById(req.userID)
     console.log(obj)
       res.send(obj)
   })
