@@ -1,6 +1,3 @@
-
-
-
 let express = require("express");
 const { authenticate } = require("./middleware");
 const { Product } = require("./EmployeeSchema");
